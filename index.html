@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dip Kishor Regmi | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset some default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background: #1e293b; /* Darker background */
+        color: #1e293b;
+      }
+
+      header {
+        background: linear-gradient(to bottom right, #ffa07a, #9bddff);
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+
+      header h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        color: #eee;
+      }
+
+      nav {
+        background-color: #fff;
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: -40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        background-color: #2563eb;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      section {
+        margin: 60px 0;
+        padding: 40px;
+        background: #fff;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #2563eb;
+        font-weight: 700;
+      }
+
+      /* Grids for sections */
+      #skills .skills-grid,
+      #experience .experience-grid,
+      #projects .project-grid,
+      #education .education-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .skill,
+      .experience,
+      .project,
+      .education {
+        background: #f9fafb;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill:hover,
+      .experience:hover,
+      .project:hover,
+      .education:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill h3,
+      .experience h3,
+      .project h3,
+      .education h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #1e40af;
+      }
+
+      /* Contact section */
+#contact .contact-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* Space between email and Instagram */
+  margin-top: 30px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.5rem;
+  color: #2563eb;
+}
+
+.contact a {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.contact a:hover {
+  background-color: #1e3a8a;
+}
+
+
+      .project a {
+        display: inline-block;
+        margin-top: 10px;
+        background: #2563eb;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .project a:hover {
+        background: #1e3a8a;
+      }
+
+      /* Responsive grids */
+      @media (max-width: 1024px) {
+        #skills .skills-grid,
+        #experience .experience-grid,
+        #projects .project-grid,
+        #education .education-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        #skills .skills-grid,
+        #experience .experience-grid,
+        #projects .project-grid,
+        #education .education-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Image upload section */
+      #image-upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      #image-upload img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      #image-upload label {
+        background-color: #2563eb;
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #image-upload label:hover {
+        background-color: #1e40af;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 30px 0;
+        background: linear-gradient(to right, #ffa07a, #9bddff);
+        color: #fff;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      footer a {
+        color: #f97316;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Dip Kishor Regmi</h1>
+        <p>Dotnet Developer | Tech Enthusiast</p>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Dip Kishor Regmi, a passionate web developer and designer
+        with a love for crafting innovative solutions. With experience in HTML,
+        CSS, JavaScript, and backend frameworks such as Asp.Net Core, Django, I
+        aim to create user-friendly and visually appealing websites.
+      </p>
+
+      <!-- Image Upload Section -->
+
+      <div id="image-upload">
+        <!-- Replace with your actual image URL -->
+        <img id="profile-pic" src="unnamed.jpg" alt="Profile Picture" />
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h3>HTML & CSS</h3>
+          <p>Proficient in crafting clean, semantic HTML and CSS layouts.</p>
+        </div>
+        <div class="skill">
+          <h3>JavaScript</h3>
+          <p>
+            Experienced in creating interactive and dynamic web experiences.
+          </p>
+        </div>
+        <div class="skill">
+          <h3>Asp.Net Core</h3>
+          <p>
+            Handling backend development with .Net and database integration.
+          </p>
+        </div>
+        <div class="skill">
+          <h3>Python</h3>
+          <p>Experience in scripting and developing machine learning models.</p>
+        </div>
+        <div class="skill">
+          <h3>MS SQL</h3>
+          <p>Database management and data modeling using MS Sql.</p>
+        </div>
+        <div class="skill">
+          <h3>Knockout.js</h3>
+          <p>
+            Experienced in building dynamic client-side applications with
+            Knockout.js.
+          </p>
+        </div>
+        <div class="skill">
+          <h3>KendoGrid</h3>
+          <p>
+            Expertise in using Kendo UI's KendoGrid for creating interactive
+            grids in applications.
+          </p>
+        </div>
+        <div class="skill">
+          <h3>Stored Procedures</h3>
+          <p>
+            Skilled in writing complex SQL stored procedures for efficient data
+            processing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <h2>Experience</h2>
+      <div class="experience-grid">
+        <div class="experience">
+          <h3>Dotnet Developer - Riddhasoft pvt. ltd.</h3>
+          <p>Aug 2024 - Present</p>
+          <p>
+            Developed robust full-stack applications using modern technologies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project">
+          <h3>Ecommerce Website</h3>
+          <p>
+            A dotnet project to upload the quality furnitures, manage users by
+            admin and functionality to view, add to cart, checkout by user.
+          </p>
+          <a href="https://github.com/Dip-Kishor/EcomInDotnet" target="_blank"
+            >Project Link</a
+          >
+        </div>
+        <div class="project">
+          <h3>Authentication and Authorization using JWT</h3>
+          <p>
+            A project made in Asp.Net Core that handles the concept of A&A using
+            JWT for generating Access Token and Refresh Token.
+          </p>
+          <a
+            href="https://github.com/Dip-Kishor/JWTInAspNetCore"
+            target="_blank"
+            >Project Link</a
+          >
+        </div>
+        <div class="project">
+          <h3>Microservice in .Net</h3>
+          <p>
+            A project that provides the concept of microservices in Asp.Net
+            Core. This project is developed using the api gateway(Ocelot) for
+            different microservices.
+          </p>
+          <a
+            href="https://github.com/Dip-Kishor/MicroService-In-Asp.Net-Core"
+            target="_blank"
+            >Project Link</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="container">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education">
+          <h3>Bachelor's in Computer Science and Information Technology</h3>
+          <p>Ambition College,TU, 2021-present</p>
+        </div>
+        <div class="education">
+          <h3>+2 in Science</h3>
+          <p>Ambition Academy, 2018 - 2020</p>
+        </div>
+        <div class="education">
+          <h3>SEE</h3>
+          <p>Shree Bishnu Secondary School, 2017</p>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <div class="contact-grid">
+      <div class="contact">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dipkishor9910@gmail.com" target="_blank">Email</a>
+      </div>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/dip-kishor-regmi-9b7a6631b/" target="_blank">LinkedIn</a>
+      </div>
+      <div class="contact">
+        <a href="https://www.instagram.com/dipkishor_regmi/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+      <p>&copy; 2024 Dip Kishor Regmi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+       document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    };
+    </script>
+  </body>
+</html>
