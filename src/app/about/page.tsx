@@ -8,7 +8,7 @@ export default function ExperienceBanner() {
 
   const { years, months } = useMemo(() => {
     const now = new Date();
-    let totalMonths =
+    const totalMonths =
       (now.getFullYear() - startDate.getFullYear()) * 12 +
       (now.getMonth() - startDate.getMonth());
 

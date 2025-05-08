@@ -13,7 +13,7 @@ const HeroBanner = () => {
           h-[40vh] lg:h-[20vh] items-center justify-center '>
           <div className='text-center' >
             <p>
-              Hello, I'm Dip Kishor Regmi. I'm a
+              Hello, I&apos;m Dip Kishor Regmi. I&apos;m a
             </p>
             <h1 className='text-5xl font-bold'>
               FULL STACK DEVELOPER<br/> BASED IN NEPAL
